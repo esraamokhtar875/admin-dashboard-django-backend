@@ -18,11 +18,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.urls import path
 
-
+from api import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
+    path('api/foodlist/search/', views.food_search, name='food_search'),
+    path('api/categorylist/search/', views.category_search, name='category_search'),
+    path('api/userlist/search/', views.user_search, name='user_search'),
     
 ]
 
